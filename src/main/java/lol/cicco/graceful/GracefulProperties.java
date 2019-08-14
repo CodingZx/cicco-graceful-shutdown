@@ -13,7 +13,7 @@ public class GracefulProperties {
         /**
          * Timeout (in ms) to wait for running Requests to complete
          */
-        private Integer graceful = 10000;
+        private Integer request = 10000;
 
         /**
          * Timeout (in ms) to wait until all containers are shutdown. Bust be
@@ -21,15 +21,15 @@ public class GracefulProperties {
          */
         private Integer container = 15000;
 
-        public Integer getGraceful() {
-            return graceful;
+        Integer getRequest() {
+            return request;
         }
 
-        public void setGraceful(Integer graceful) {
-            this.graceful = graceful;
+        public void setRequest(Integer request) {
+            this.request = request;
         }
 
-        public Integer getContainer() {
+        Integer getContainer() {
             return container;
         }
 
@@ -39,7 +39,7 @@ public class GracefulProperties {
 
     }
 
-    public Timeout getTimeout() {
+    Timeout getTimeout() {
         return timeout;
     }
 

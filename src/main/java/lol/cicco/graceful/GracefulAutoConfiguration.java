@@ -18,7 +18,7 @@ public class GracefulAutoConfiguration {
     @ConditionalOnMissingBean
     public GracefulHttpFilter gracefulHttpFiler() {
         GracefulHttpFilter filter = new GracefulHttpFilter();
-        filter.setTimeout(properties.getTimeout().getGraceful());
+        filter.setTimeout(properties.getTimeout().getRequest());
         return filter;
     }
 
