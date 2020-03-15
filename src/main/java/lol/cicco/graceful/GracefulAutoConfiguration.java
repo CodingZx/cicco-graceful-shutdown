@@ -1,7 +1,7 @@
 package lol.cicco.graceful;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnEnabledEndpoint;
+import org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnAvailableEndpoint;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -32,7 +32,7 @@ public class GracefulAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    @ConditionalOnEnabledEndpoint
+    @ConditionalOnAvailableEndpoint
     public GracefulShutdownEndpoint graceShutdownEndPoint() {
         return new GracefulShutdownEndpoint();
     }
